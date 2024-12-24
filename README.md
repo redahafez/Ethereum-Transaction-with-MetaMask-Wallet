@@ -13,8 +13,14 @@ This project demonstrates how to create a basic website that interacts with the 
 
 ## Folder Structure
 
-project-folder/ │ ├── index.html # Homepage ├── js/ │ ├── ethereum.js # Ethereum and MetaMask interaction logic │ └── app.js # Additional app logic (future use) │ ├── css/ │ ├── styles.css # Styling for the homepage │ └── assets/ └── images/ └── logo.png # Website logo or other image resources
+File Integration:
+index.html: This is your main page where users interact with MetaMask and initiate transactions. The page loads the necessary scripts like ethereum.js for wallet interaction and profit.js for transaction logic.
 
+ethereum.js: This file handles connecting to MetaMask and signing Ethereum transactions using ethers.js. It ensures the user's wallet is connected before sending transactions.
+
+profit.js: Contains transaction logic where users can initiate transactions with added fees for profit. This file calculates the transaction fee markup and sends the final transaction amount (with markup).
+
+styles.css: Provides the basic layout and styling for the HTML elements (buttons, inputs, and feedback areas).
 
 
 ## Prerequisites
