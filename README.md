@@ -30,7 +30,7 @@ project-folder/ │ ├── index.html # Homepage ├── js/ │ ├── 
 
 1. Clone the Repository:
    ```bash
-   git clone https://github.com/your-username/ethereum-metamask-interaction.git
+   git clone https://github.com/redahafez/Ethereum-Transaction-with-MetaMask-Wallet.git
    cd ethereum-metamask-interaction
 
 
