@@ -31,7 +31,7 @@ project-folder/ │ ├── index.html # Homepage ├── js/ │ ├── 
 1. Clone the Repository:
    ```bash
    git clone https://github.com/redahafez/Ethereum-Transaction-with-MetaMask-Wallet.git
-   cd ethereum-metamask-interaction
+   cd Ethereum-Transaction-with-MetaMask-Wallet
 
 
 Open the file in a browser with MetaMask installed and unlocked.
