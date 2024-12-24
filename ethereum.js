@@ -1,25 +1,24 @@
-document.getElementById('connect-wallet-btn').addEventListener('click', connectWallet);
+// ethereum.js
+
+// Check if MetaMask is installed and initialize Web3Provider
+if (typeof window.ethereum === 'undefined') {
+    document.getElementById('wallet-status').innerText = 'Please install MetaMask!';
+}
 
 async function connectWallet() {
     if (window.ethereum) {
         try {
-            // Request account access (prompt user to connect their wallet)
+            // Request accounts
             await window.ethereum.request({ method: 'eth_requestAccounts' });
-            
-            // Once the account is connected, display the account address
             const provider = new ethers.providers.Web3Provider(window.ethereum);
             const signer = provider.getSigner();
             const address = await signer.getAddress();
-
-            document.getElementById("status-message").innerText = "MetaMask is connected.";
-            document.getElementById("account-details").innerText = `Connected account: ${address}`;
+            document.getElementById('wallet-status').innerText = `Connected: ${address}`;
         } catch (error) {
-            console.error('User denied account access', error);
-            document.getElementById("status-message").innerText = "Please connect MetaMask to continue.";
+            console.log("Error connecting wallet:", error);
+            document.getElementById('wallet-status').innerText = 'Error connecting wallet. Ensure MetaMask is installed.';
         }
-    } else {
-        // MetaMask not installed
-        console.error("MetaMask is not installed.");
-        document.getElementById("status-message").innerText = "MetaMask is not installed. Please install MetaMask to use this app.";
     }
 }
+
+document.getElementById('connect-wallet-btn').addEventListener('click', connectWallet);
